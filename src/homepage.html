@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meal planner</title>
+    <link rel="stylesheet" type="text/css" href="style.css" >
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: rgb(54, 39, 0);
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url(images/meal10.jpg) no-repeat center center fixed;  /* Use a background image */
+            background-size: cover;
+            background-position: center;
+            display: grid;              /* Use grid layout for the home section */
+            grid-template-columns: repeat(1, 1fr);
+            align-items: center;
+        }
+        .container {
+            margin-top: 100px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 64px;
+            color: #fff;
+            text-shadow: 2px 2px #333;
+        }
+        p {
+            font-size: 24px;
+            color: white;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+        input[type="text"] {
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid var(--main-color);
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: var(--main-color);
+            color: var(--bg-color);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #5a3ce3;
+        }
+        
+        
+        .btn {
+            display: block;
+            margin: 1rem auto;
+            padding: 0.5rem 1rem;
+            background-color: #FFA500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #FF8C00;
+        }
+        .recipe-container2 {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .recipe2 {
+            width: 85%;
+            margin-bottom: 2rem;
+            margin: 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            font-weight: bold;
+        }
+        
+        .recipe2 img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .recipe2 p,
+        .recipe2 ul,
+        .recipe2 li {
+        color: #442b0c;
+        font-size: 14px; /* Adjust the font size as needed */
+        font-weight: bold;
+        }
+        .home-text p {
+            font-weight: bold;
+            color: #442b0c;
+        }
+    </style>
+</head>
+<body>
+
+    <!--header-->
+    <header>
+        <a href="#" class="logo">Meal</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="feedback.html">Notes</a></li>
+        </ul>
+    </header>
+    <!--Home section-->
+    <div class="container">
+        <div class="home-text">
+            <p>Get inspired with delicious recipes and <br> meal ideas from around the world!</p>
+            <label for="meal" class="home-text">List of meal : </label>
+            <select id="meal">
+                <option value="Corba">Corba</option>
+                <option value="Sushi">Sushi</option>
+                <option value="Burek">Burek</option>
+                <option value="Kumpir">Kumpir</option>
+                <option value="Bistek">Bistek</option>
+                <option value="Tamiya">Tamiya</option>
+                <option value="Poutine">Poutine</option>
+                <option value="Lasagne">Lasagne</option>
+                <option value="Wantons">Wantons</option>
+                <option value="Dal fry">Dal fry</option>
+                <option value="Big mac">Big mac</option>
+                <option value="Shawarma">Shawarma</option>
+                <option value="Koshari">Koshari</option>
+                <option value="Timbits">Timbits</option>
+                <option value="Fish pie">Fish pie</option>
+                <option value="Kedgeree">Kedgeree</option>
+                <option value="Stamppot">Stamppot</option>
+                <option value="Kapsalon">Kapsalon</option>
+                <option value="Flamiche">Flamiche</option>
+                <option value="Pancakes">Pancakes</option>
+                <option value="Moussaka">Moussaka</option>
+                <option value="Yaki Udon">Yaki Udon</option>
+                <option value="Shakshuka">Shakshuka</option>
+                <option value="Tourtiere">Tourtiere</option>
+
+            </select>
+            <button onclick="buttonClicked()">Search</button>
+            <p id="display"></p>
+        </div>
+    </div>
+    
+    
+
+<!--link to js-->
+<script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner</title>
+    <link rel="stylesheet" type="text/css" href="style.css" >
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: rgb(54, 39, 0);
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url(images/meal10.jpg) no-repeat center center fixed;  /* Use a background image */
+            background-size: cover;
+            background-position: center;
+            display: grid;              /* Use grid layout for the home section */
+            grid-template-columns: repeat(1, 1fr);
+            align-items: center;
+        }
+        
+        .new-note {
+        margin-top: 80px;
+        margin-bottom: 40px;
+        background-color: white;
+        border: 1px solid #dadada;
+        border-radius: 6px;
+        padding: 16px;
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        }
+        .new-note input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding: 0 0 12px;
+        
+        }
+        .new-note textarea {
+        display: block;
+        width: 100%;
+        min-height: 100px;
+        border: none;
+        resize: none;
+        background: transparent;
+        outline: none;
+        padding: 0;
+        
+        }
+        #form-error {
+        color: #b33030;
+        position: absolute;
+        bottom: -32px;
+        left: 0;
+        }
+        .button-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 32px;
+        }
+        .add-btn {
+        border: 1px solid rgb(95, 95, 95);
+        background-color: transparent;
+        transition: background-color 250ms, color 250ms;
+        border-radius: 16px;
+        cursor: pointer;
+        padding: 8px 12px;
+        }
+        .add-btn:hover {
+        background-color: rgb(95, 95, 95);
+        color: white;
+        }
+        #notes-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        width: 100%;
+        max-width: 600px;
+        }
+        .note {
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+            background: white;
+            border: 1px solid #dadada;
+            border-radius: 6px;
+            padding: 16px;
+        }
+        .note-title {
+        font-size: 1.5em;
+        font-weight: 700;
+        margin-bottom: 8px;
+        width: 100%;
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+        }
+        .note-title:last-child {
+        margin-bottom: 0;
+        }
+        .note-text {
+       
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+        background-color: white;
+      
+        }
+        .note-date {
+        font-size: 0.75em;
+        text-align: right;
+        border-top: 1px solid #dadada;
+        padding-top: 16px;
+        
+        margin-top: auto;
+        }
+        .note-controls {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: white;
+        font-size: 0.75rem;
+        column-gap: 8px;
+        padding: 8px;
+        display: flex;
+        opacity: 0;
+        transition: opacity 350ms;
+        }
+        .note:hover .note-controls,
+        .note-controls:focus-within {
+        opacity: 1;
+        }
+        .note-controls button {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 0.5rem;
+        }
+        .note-controls button:hover {
+        filter: brightness(0.85)
+        }
+        .note-delete {
+        color: #bb0000;
+        }
+        .note-edit {
+        color: #00bb00;
+        }
+        .note-save {
+        color: #0000bb;
+        }
+        .note-save[disabled="true"] {
+        color: #dfdfdf;
+        pointer-events: none;
+        user-select: none;
+        cursor: not-allowed;
+        }
+        main {
+            max-width: 600px; /* Set the maximum width for the content */
+            width: 90%;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Meal Planner</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="homepage.html">Meal</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="new-note">
+            <input type="text" name="title" id="title" placeholder="Title">
+            <textarea name="content" id="content" placeholder="Start writing"></textarea>
+        </div>
+        <div class="button-container">
+            <button class="add-btn" onclick="addNote()">Add note</button>
+        </div>
+        <div id="notes-wrapper"></div>
+    </main>
+
+    <script src="crudd.js"></script>
+</body>
+</html>
